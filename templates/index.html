@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GuardFrame - Text Encryption Application</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">GuardFrame</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <header class="container-fluid text-center mt-5">
+    <h1 class="display-4">GuardFrame 1.0</h1>
+    <p class="lead">GuardFrame is a simple tool for encrypting and decrypting text using the Caesar cipher. Enter your text, 
+      choose to encrypt or decrypt, set your key, and get instant results. Perfect for securing your messages with ease.</p>
+  </header>
+  <main role="main" class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-5 pr-md-3">
+        <div class="container">
+          <form id="textForm" class="bordered-section">
+            <div class="form-group">
+              <label for="inputText">Enter Text</label>
+              <textarea class="form-control" id="inputText" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="operation">Choose Operation</label>
+              <select class="form-control" id="operation" required>
+                <option value="encrypt">Encrypt</option>
+                <option value="decrypt">Decrypt</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="key">Enter Key (1-25)</label>
+              <input type="number" class="form-control" id="key" min="1" max="25" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-5 pl-md-3">
+        <div class="container">
+          <div class="bordered-section">
+            <h4>Result</h4>
+            <div id="resultContainer">
+              <textarea class="form-control" id="resultText" rows="5" readonly></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aboutModalLabel">About GuardFrame</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>GuardFrame was created by Lakshan Induwara, an undergraduate at the University of Sri Jayewardenepura. As a passionate developer with a keen interest in cryptography and web development, Lakshan is dedicated to providing user-friendly tools that enhance digital privacy and security.</p>
+          <p>This is version 1.0 of GuardFrame, designed to offer a simple and effective solution for text encryption and decryption.</p>
+          <h5>Contact</h5>
+          <p>For more information, feedback, or inquiries, please contact:</p>
+          <p>Name: Lakshan Induwara</p>
+          <p>Email: <a href="induwarlakshan@gmail.com">induwarlakshan@gmail.com</a></p>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container text-center">
+      <span class="text-muted">&copy; 2024 GuardFrame. All rights reserved.</span>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
