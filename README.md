@@ -1,39 +1,80 @@
-How to Run GuardFrame
-Welcome to GuardFrame, a simple and powerful tool for encrypting and decrypting text using the Caesar cipher. Follow these steps to run the application on your local machine:
+To run GuardFrame, a tool for encrypting and decrypting text using the Caesar cipher, follow these step-by-step instructions:
 
-Step-by-Step Guide
-Clone the Repository: Start by cloning the GuardFrame repository from GitHub to your local machine. Open your terminal and run:
+### Step-by-Step Guide
 
-git clone https://github.com/induwara2020/GuardFrame.git
-Navigate to the Project Directory: Change into the project directory:
+1. **Clone the Repository:**
+   Start by cloning the GuardFrame repository from GitHub to your local machine. Open your terminal (command prompt) and run the following command:
 
-cd guardframe
-Set Up a Virtual Environment (Optional but Recommended): Create and activate a virtual environment to manage dependencies:
+   ```
+   git clone https://github.com/induwara2020/GuardFrame.git
+   ```
 
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-Install Dependencies: Install the required Python packages using pip:
+2. **Navigate to the Project Directory:**
+   Change into the project directory that you just cloned:
 
-pip install -r requirements.txt
-Run the Flask Application: Start the Flask application by running:
+   ```
+   cd guardframe
+   ```
 
-python app.py
-This will start the server, and you should see output indicating that the server is running.
+3. **Set Up a Virtual Environment (Optional but Recommended):**
+   It's a good practice to create and activate a virtual environment to manage dependencies. This step ensures that the project's dependencies are isolated from your global Python environment:
 
-Open the Application in Your Browser: Open your web browser and go to:
+   - On macOS/Linux:
+     ```
+     python -m venv venv
+     source venv/bin/activate
+     ```
+   
+   - On Windows:
+     ```
+     python -m venv venv
+     venv\Scripts\activate
+     ```
 
-http://127.0.0.1:5000/
-You should see the GuardFrame application interface.
+4. **Install Dependencies:**
+   Install the required Python packages specified in `requirements.txt`:
 
-Using GuardFrame
-Enter Text: Type or paste the text you want to encrypt or decrypt into the "Enter Text" field.
+   ```
+   pip install -r requirements.txt
+   ```
 
-Choose Operation: Select whether you want to "Encrypt" or "Decrypt" the text from the dropdown menu.
+5. **Run the Flask Application:**
+   Start the Flask application by running the following command:
 
-Enter Key: Specify a key between 1 and 25. This key determines the shift applied during the encryption or decryption process.
+   ```
+   python app.py
+   ```
 
-Submit: Click the "Submit" button to process your text. The result will be displayed in the "Result" textarea.
+   This command starts the server, and you should see output indicating that the server is running.
 
-Additional Information
-For more details on how the Caesar cipher works, you can check out the Caesar cipher Wikipedia page.
-Thank you for using GuardFrame!
+6. **Open the Application in Your Browser:**
+   Once the server is running, open your web browser and go to the following URL:
+
+   ```
+   http://127.0.0.1:5000/
+   ```
+
+   This will open the GuardFrame application interface in your browser.
+
+### Using GuardFrame
+
+Once you have the application open in your browser, follow these steps to encrypt or decrypt text using the Caesar cipher:
+
+1. **Enter Text:**
+   Type or paste the text you want to encrypt or decrypt into the "Enter Text" field on the GuardFrame web interface.
+
+2. **Choose Operation:**
+   Select whether you want to "Encrypt" or "Decrypt" the text from the dropdown menu provided.
+
+3. **Enter Key:**
+   Specify a key between 1 and 25. This key determines the shift applied during the encryption or decryption process.
+
+4. **Submit:**
+   Click the "Submit" button to process your text with the selected operation and key. The result will be displayed in the "Result" textarea below.
+
+### Additional Information
+
+- **Caesar Cipher Details:**
+  For more details on how the Caesar cipher works, you can refer to the Caesar cipher Wikipedia page or any other reliable source on cryptography.
+
+By following these steps, you should be able to successfully run and use GuardFrame on your local machine.
